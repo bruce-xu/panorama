@@ -1,0 +1,168 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 12px;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid #EFEFEF;
+  padding-bottom: 5px;
+  margin: 0;
+}
+
+.content {
+  padding: 10px;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+#loading {
+  display: none;
+}
+.loading-inner {
+  position: fixed;
+  left: 50%;
+  margin-left: -32px;
+  top: 50%;
+  margin-top: -100px;
+  transform: scale(.7);
+  color: official;
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+}
+.loading-mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #000;
+  opacity: .2;
+}
+.loading-inner div {
+  transform-origin: 32px 32px;
+  animation: loading 1.2s linear infinite;
+}
+.loading-inner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 29px;
+  width: 5px;
+  height: 14px;
+  border-radius: 20%;
+  background: #FFF;
+}
+.loading-inner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.loading-inner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.loading-inner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.loading-inner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.loading-inner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.loading-inner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.loading-inner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.loading-inner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.loading-inner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.loading-inner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.loading-inner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.loading-inner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dialog-mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.1);
+}
+.dialog-body {
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  background: rgba(255,255,255,.9);
+  text-align: center;
+}
+.dialog-content {
+  padding: 15px;
+}
+.dialog-btns {
+  text-align: center;
+  padding: 15px;
+}

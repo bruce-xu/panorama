@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="/css/upload.css" />
+<input type="hidden" id="panoramaId" value="<%= id %>" />
+<h1 class="header">创建全景项目</h1>
+<div id="images">
+  <% images && images.forEach(function(image){ %>
+    <img src="<%= image %>" />
+  <% }) %>
+</div>
+<div class="actions">
+  <input type="file" multiple id="file">
+  <button class="btn <%= images && images.length ? '' : 'hidden' %>" id="generate">上传完成，点击生成全景页面</button>
+</div>
+<script type="text/javascript" src="/js/upload.js"></script>

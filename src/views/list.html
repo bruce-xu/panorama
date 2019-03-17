@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="/css/list.css" />
+<h1 class="header">全景项目列表</h1>
+<input type="hidden" id="configured" value="<%= configured %>" />
+<div style="display: none">
+  <ul id="tips" style="text-align: left;">
+    <li>本项目使用 <a target="_blank" href="https://krpano.com/">Krpano</a> 来生成全景图</li>
+    <li>支持 JPG、JPEG、PNG 格式</li>
+    <li>本项目包含三个平台（Windows、Mac、Linux）的 Krpano 安装包（为减少体积，去除了文档、例子等和运行无关的文件）</li>
+    <li>Krpano 是付费软件，未注册前，生成的全景图会有水印。想去除水印的话，请自行购买 Krpano 并到 bin 目录下注册相应平台下的 Krpano</li>
+    <li>若想使用自己安装的 Krpano，请修改 src/config.js 文件中的 KRPANO_INSTALL_PATH 字段</li>
+  </ul>
+</div>
+<div class="actions">
+  <button id="createBtn">新建全景项目</button>
+  <button id="help">说明</button>
+</div>
+<table cellspacing="0">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>状态</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% panoramas.forEach(function(panorama){ %>
+      <tr>
+        <td><a target="_blank" href="/page/panoramas/<%= panorama.id %>"><%= panorama.name %></a></td>
+        <td><%= panorama.stage === 'generated' ? '已生成H5' : (panorama.stage === 'uploaded' ? '已上传图片' : '已创建') %></td>
+        <td>
+          <a target="_blank" href="/page/panoramas/<%= panorama.id %>/edit">编辑</a>
+          <a class="delete" href data-id="<%= panorama.id %>" data-name="<%= panorama.name %>">删除</a>
+          <% if (panorama.stage === 'generated') { %>
+            <a target="_blank" href="/page/panoramas/<%= panorama.id %>">预览</a>
+          <% } %>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+<script src="/js/list.js"></script>

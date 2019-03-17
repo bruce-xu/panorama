@@ -1,0 +1,17 @@
+.actions {
+  text-align: center;
+  margin: 20px;
+}
+
+#images {
+  text-align: center;
+}
+
+#images img {
+  margin: 10px;
+  max-width: 500px;
+}
+
+#generateBtn {
+  margin-left: 20px;
+}

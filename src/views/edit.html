@@ -1,0 +1,18 @@
+<link rel="stylesheet" type="text/css" href="/css/edit.css" />
+<input type="hidden" id="panoramaId" value="<%= id %>" />
+<h1 class="header">创建全景项目</h1>
+<div class="actions">
+  <button class="btn" id="addHotspot">添加热点</button>
+  <button class="btn" id="preview">预览</button>
+</div>
+<div class="pano-wrapper">
+  <div id="hotspotActions">
+    <button id="saveHotspot">保存</button>
+    <button id="deleteHotspot">删除</button>
+  </div>
+  <div id="pano"></div>
+</div>
+
+<script src="/krpano/krpano.js"></script>
+<script src="/js/krpanotool.js"></script>
+<script src="/js/edit.js"></script>
